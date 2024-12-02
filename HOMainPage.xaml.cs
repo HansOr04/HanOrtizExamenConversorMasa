@@ -1,11 +1,11 @@
 using System;
 namespace HanOrtizExamenConversorMasa
 {
-    public partial class MainPage : ContentPage
+    public partial class HOMainPage : ContentPage
     {
         private readonly HOConversionModel _modelo;
 
-        public MainPage()
+        public HOMainPage()
         {
             InitializeComponent();
             _modelo = new HOConversionModel();

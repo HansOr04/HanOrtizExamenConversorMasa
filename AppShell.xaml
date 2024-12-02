@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Conversor de Masa"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:HOMainPage}"
+        Route="HOMainPage" />
 
 </Shell>
