@@ -1,44 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HanOrtizExamenConversorMasa.Models
+namespace HanOrtizExamenConversorMasa
 {
     public class HOConversionModel
     {
-        public double Valor {  get; set; }
+        // Properties
         public string UnidadOrigen { get; set; }
         public string UnidadDestino { get; set; }
-        public double Resultado { get; set; }
+        public double Valor { get; set; }
+        public double Resultado { get; private set; }
+
+        // Constructor
         public HOConversionModel()
         {
-            UnidadOrigen = string.Empty;
-            UnidadDestino = string.Empty;
+            Limpiar();
         }
-        public void RealizarConversion() {
-            double valorEnKG = UnidadOrigen switch
-            {
-                "Kilogramos" => Valor,
-                "Libras" => Valor * 0.45359237,
-                "Onzas" => Valor * 0.283495231,
-                _ => throw new ArgumentException("Unidad de origen no valida")
 
-            };
-            Resultado = UnidadDestino switch
+        // Method to perform the conversion
+        public void RealizarConversion()
+        {
+            // First convert to kilograms as base unit
+            double valorEnKg = ConvertirAKilogramos(Valor, UnidadOrigen);
+            
+            // Then convert from kilograms to target unit
+            Resultado = ConvertirDesdeKilogramos(valorEnKg, UnidadDestino);
+        }
+
+        // Convert any unit to kilograms
+        private double ConvertirAKilogramos(double valor, string unidad)
+        {
+            return unidad switch
             {
-                "Kilogramos" => valorEnKG,
-                "Libras" => valorEnKG / 0.45359237,
-                "Onzas" => valorEnKG / 0.283495231,
-                _ => throw new ArgumentException("Unidad de destino no valida")
+                "Kilogramos" => valor,
+                "Libras" => valor * 0.45359237,
+                "Onzas" => valor * 0.0283495231,
+                _ => throw new ArgumentException("Unidad de origen no válida")
             };
         }
+
+        // Convert from kilograms to any unit
+        private double ConvertirDesdeKilogramos(double valorEnKg, string unidad)
+        {
+            return unidad switch
+            {
+                "Kilogramos" => valorEnKg,
+                "Libras" => valorEnKg / 0.45359237,
+                "Onzas" => valorEnKg / 0.0283495231,
+                _ => throw new ArgumentException("Unidad de destino no válida")
+            };
+        }
+
+        // Reset all values
         public void Limpiar()
         {
-            Valor = 0;
             UnidadOrigen = string.Empty;
             UnidadDestino = string.Empty;
+            Valor = 0;
             Resultado = 0;
         }
     }
