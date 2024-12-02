@@ -1,4 +1,4 @@
-namespace HansOrtizExamenConversorMasa
+namespace HanOrtizExamenConversorMasa
 {
     public partial class MainPage : ContentPage
     {

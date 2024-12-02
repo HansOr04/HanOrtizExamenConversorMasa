@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HanOrtizExamenConversorMasa.Views.HOConversionPage"
              Title="HOConversionPage">
+    <ContentPage.Content>
     <ScrollView>
         <Grid RowDefinitions="Auto,*,Auto"
           Padding="20"
@@ -97,5 +98,5 @@
                 CornerRadius="10"/>
         </Grid>
     </ScrollView>
-
+    </ContentPage.Content>
 </ContentPage>
