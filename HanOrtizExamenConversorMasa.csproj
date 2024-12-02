@@ -63,8 +63,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="HOMainPage.xaml.cs">
-	    <DependentUpon>HOMainPage.xaml</DependentUpon>
+	  <Compile Update="MainPage.xaml.cs">
+	    <DependentUpon>MainPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
