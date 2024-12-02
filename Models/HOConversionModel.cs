@@ -29,9 +29,9 @@ namespace HanOrtizExamenConversorMasa
         {
             return unidad switch
             {
-                "Kilogramos" => valor,
-                "Libras" => valor * 0.45359237,
-                "Onzas" => valor * 0.0283495231,
+                "HOKilogramos" => valor,
+                "HOLibras" => valor * 0.45359237,
+                "HOOnzas" => valor * 0.0283495231,
                 _ => throw new ArgumentException("Unidad de origen no válida")
             };
         }
@@ -41,9 +41,9 @@ namespace HanOrtizExamenConversorMasa
         {
             return unidad switch
             {
-                "Kilogramos" => valorEnKg,
-                "Libras" => valorEnKg / 0.45359237,
-                "Onzas" => valorEnKg / 0.0283495231,
+                "HOKilogramos" => valorEnKg,
+                "HOLibras" => valorEnKg / 0.45359237,
+                "HOOnzas" => valorEnKg / 0.0283495231,
                 _ => throw new ArgumentException("Unidad de destino no válida")
             };
         }

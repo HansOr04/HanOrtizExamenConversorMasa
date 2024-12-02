@@ -35,9 +35,9 @@
                             TextColor="#333333"
                             SelectedIndexChanged="HOPickerOrigen_SelectedIndexChanged">
                         <Picker.Items>
-                            <x:String>Kilogramos</x:String>
-                            <x:String>Libras</x:String>
-                            <x:String>Onzas</x:String>
+                            <x:String>HOKilogramos</x:String>
+                            <x:String>HOLibras</x:String>
+                            <x:String>HOOnzas</x:String>
                         </Picker.Items>
                     </Picker>
                 </Grid>
@@ -68,9 +68,9 @@
                             TextColor="#333333"
                             SelectedIndexChanged="HOPickerDestino_SelectedIndexChanged">
                         <Picker.Items>
-                            <x:String>Kilogramos</x:String>
-                            <x:String>Libras</x:String>
-                            <x:String>Onzas</x:String>
+                            <x:String>HOKilogramos</x:String>
+                            <x:String>HOLibras</x:String>
+                            <x:String>HOOnzas</x:String>
                         </Picker.Items>
                     </Picker>
                 </Grid>
