@@ -1,9 +1,9 @@
-using HansOrtizExamenConversorMasa.Models;
+using HanOrtizExamenConversorMasa.Models;
+namespace HanOrtizExamenConversorMasa.Views;
 
-namespace HansOrtizExamenConversorMasa.Views
+public partial class HOConversionPage : ContentPage
 {
-    public partial class HOConversionPage : ContentPage
-    {
+
         private readonly HOConversionModel _modelo;
 
         public HOConversionPage()
@@ -50,8 +50,8 @@ namespace HansOrtizExamenConversorMasa.Views
 
         private void CalcularConversion()
         {
-            if (HOPickerOrigen.SelectedIndex == -1 || 
-                HOPickerDestino.SelectedIndex == -1 || 
+            if (HOPickerOrigen.SelectedIndex == -1 ||
+                HOPickerDestino.SelectedIndex == -1 ||
                 string.IsNullOrEmpty(HOEntryValor.Text))
             {
                 return;
@@ -64,9 +64,9 @@ namespace HansOrtizExamenConversorMasa.Views
             }
             catch (Exception ex)
             {
-                HOLabelResultado.Text = "Error en la conversiÃ³n";
-                // AquÃ­ podrÃ­as agregar logging del error si lo necesitas
+                HOLabelResultado.Text = "Error en la conversión";
+                // Aquí podrías agregar logging del error si lo necesitas
             }
         }
-    }
+   
 }
