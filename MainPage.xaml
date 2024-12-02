@@ -3,9 +3,5 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:HanOrtizExamenConversorMasa.Views"
              x:Class="HanOrtizExamenConversorMasa.MainPage">
-
-    <ContentPage.Content>
-        <views:HOConversionPage />
-    </ContentPage.Content>
-
+    <views:HOConversionPage />
 </ContentPage>
