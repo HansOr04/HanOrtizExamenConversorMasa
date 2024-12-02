@@ -1,13 +1,17 @@
+
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HanOrtizExamenConversorMasa.Views.ConversionPage"
-             Title="ConversionPage">
+             x:Class="HansOrtizExamenConversorMasa.Views.HOConversionPage"
+             Title="Conversor de Masa">
+
     <ScrollView>
         <Grid RowDefinitions="Auto,*,Auto"
               Padding="20"
               RowSpacing="20"
               BackgroundColor="#f0f0f0">
+
+            <!-- Título -->
             <Frame Grid.Row="0"
                    BackgroundColor="#2196F3"
                    CornerRadius="10"
@@ -16,14 +20,94 @@
                        FontSize="24"
                        TextColor="White"
                        HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"/>
+                       FontAttributes="Bold"/>
             </Frame>
-            <Frame Grid.Column="1"
-                   BackgroundColor="Brown"
-                   CornerRadius="10"
-                   Padding="20">
-                <Label Text="Valor para convertir"
-            </Frame>
+
+            <!-- Contenido Principal -->
+            <Grid Grid.Row="1" 
+                  RowDefinitions="Auto,Auto,Auto,Auto"
+                  RowSpacing="20">
+                
+                <!-- Unidad de Origen -->
+                <Grid Grid.Row="0" 
+                      ColumnDefinitions="*,*">
+                    <Label Text="Unidad Origen:"
+                           VerticalOptions="Center"
+                           Grid.Column="0"/>
+                    <Picker x:Name="HOPickerOrigen"
+                            Grid.Column="1"
+                            Title="Seleccione unidad"
+                            BackgroundColor="White"
+                            TextColor="#333333"
+                            SelectedIndexChanged="HOPickerOrigen_SelectedIndexChanged">
+                        <Picker.Items>
+                            <x:String>Kilogramos</x:String>
+                            <x:String>Libras</x:String>
+                            <x:String>Onzas</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+
+                <!-- Valor a Convertir -->
+                <Grid Grid.Row="1" 
+                      ColumnDefinitions="*,*">
+                    <Label Text="Valor:"
+                           VerticalOptions="Center"
+                           Grid.Column="0"/>
+                    <Entry x:Name="HOEntryValor"
+                           Grid.Column="1"
+                           Keyboard="Numeric"
+                           Placeholder="Ingrese valor"
+                           BackgroundColor="White"
+                           TextColor="#333333"
+                           PlaceholderColor="#666666"
+                           TextChanged="HOEntryValor_TextChanged"/>
+                </Grid>
+
+                <!-- Unidad de Destino -->
+                <Grid Grid.Row="2" 
+                      ColumnDefinitions="*,*">
+                    <Label Text="Unidad Destino:"
+                           VerticalOptions="Center"
+                           Grid.Column="0"/>
+                    <Picker x:Name="HOPickerDestino"
+                            Grid.Column="1"
+                            Title="Seleccione unidad"
+                            BackgroundColor="White"
+                            TextColor="#333333"
+                            SelectedIndexChanged="HOPickerDestino_SelectedIndexChanged">
+                        <Picker.Items>
+                            <x:String>Kilogramos</x:String>
+                            <x:String>Libras</x:String>
+                            <x:String>Onzas</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+
+                <!-- Resultado -->
+                <Grid Grid.Row="3" 
+                      ColumnDefinitions="*,*">
+                    <Label Text="Resultado:"
+                           VerticalOptions="Center"
+                           Grid.Column="0"/>
+                    <Label x:Name="HOLabelResultado"
+                           Text="0"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           Grid.Column="1"/>
+                </Grid>
+            </Grid>
+
+            <!-- Botón Limpiar -->
+            <Button Grid.Row="2"
+                    Text="Limpiar"
+                    x:Name="HOButtonLimpiar"
+                    Clicked="HOButtonLimpiar_Clicked"
+                    BackgroundColor="#FF5252"
+                    TextColor="White"
+                    CornerRadius="10"/>
         </Grid>
     </ScrollView>
+
 </ContentPage>
